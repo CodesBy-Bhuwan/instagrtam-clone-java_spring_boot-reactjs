@@ -3,11 +3,11 @@ import { Routes, Route } from 'react-router-dom'
 import Sidebar from "../../components/Sidebar/Sidebar"
 import HomePage from "../HomePage/HomePage"
 
-function Router() {
+const Router = () => {
   return (
     <div>
         <div className='flex'>
-            <div>
+            <div className='w-[20%] border border-l-slate-500'>
                 <Sidebar />
             </div>
             <div>
@@ -17,7 +17,7 @@ function Router() {
             </div>
         </div>
     </div>
-  )
-}
+  );
+};
 
 export default Router;
