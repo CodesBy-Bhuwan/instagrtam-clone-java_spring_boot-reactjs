@@ -4,6 +4,7 @@ import Sidebar from "../../components/Sidebar/Sidebar"
 import HomePage from "../HomePage/HomePage"
 import Profile from '../Profile/Profile';
 
+
 const Router = () => {
   return (
     <div>
@@ -11,7 +12,7 @@ const Router = () => {
             <div className='w-[20%] border border-l-slate-500'>
                 <Sidebar />
             </div>
-            <div>
+            <div className='w-full'>
                 <Routes>
                     <Route path='/' element={<HomePage />}></Route>
                     <Route path='/username' element={<Profile />}></Route>
