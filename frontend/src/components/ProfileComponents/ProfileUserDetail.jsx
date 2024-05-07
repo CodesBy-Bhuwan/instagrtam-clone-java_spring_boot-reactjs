@@ -1,6 +1,7 @@
 import React from 'react';
-
 import { TbCircleDashed } from "react-icons/tb";
+
+
 const ProfileUserDetail = () => {
   return (
     <div className='py-10 w-full'>

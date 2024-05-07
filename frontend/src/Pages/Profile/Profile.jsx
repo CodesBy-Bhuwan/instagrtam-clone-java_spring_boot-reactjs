@@ -1,11 +1,15 @@
 import React from 'react'
 import ProfileUserDetail from '../../components/ProfileComponents/ProfileUserDetail'
+import ReqUserPostPart from '../../components/ProfileComponents/ReqUserPostPart'
 
 const Profile = () => {
   return (
     <div>
       <div>
-        <ProfileUserDetail></ProfileUserDetail>
+        <ProfileUserDetail />
+      </div>
+      <div>
+        <ReqUserPostPart />
       </div>
     </div>
   )
