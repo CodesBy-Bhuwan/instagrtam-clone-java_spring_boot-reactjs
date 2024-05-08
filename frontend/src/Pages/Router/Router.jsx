@@ -14,7 +14,7 @@ const Router = () => {
             </div>
             <div className='w-full'>
                 <Routes>
-                    <Route path='/' element={<HomePage />}></Route>
+                    <Route path='/Home' element={<HomePage />}></Route>
                     <Route path='/username' element={<Profile />}></Route>
                 </Routes>
             </div>
