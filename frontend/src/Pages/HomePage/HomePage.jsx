@@ -1,6 +1,7 @@
 import React from 'react'
 import StoriesCircle from '../../components/StoriesComponents/StoriesCircle'
 import HomeRight from '../../components/HomeRight/HomeRight'
+import Post from '../../components/Post/Post'
 
 const HomePage = () => {
   return (
@@ -10,10 +11,9 @@ const HomePage = () => {
         <div className='storyDiv flex space-x-2 border p-4 rounded-md justify-start w-full'>
           {[1,2,3].map((item)=> (<StoriesCircle/>))} 
           </div>
-          <div>
-            post
-            {/* post */}
-          </div>
+          <div className='space-y-10 w-full mt-10'>
+            {[1,2,3].map((item) => <Post/>)}
+            </div>
       </div>
       <div>
         {/* Otherinfo in the Right hand side */}
