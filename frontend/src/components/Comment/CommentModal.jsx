@@ -1,5 +1,5 @@
 import React from 'react'
-import {Modal, ModalOverlay, ModalContent, ModalCloseButton, ModalBody, } from '@chakra-ui/react'
+import {Modal, ModalOverlay, ModalContent, ModalBody, } from '@chakra-ui/react'
 // import Post from '../Post/Post'
 import CommentPart from './CommentPart';
 import { BsBookmark, BsEmojiSmile, BsThreeDots, BsBookmarkFill } from "react-icons/bs";
@@ -8,10 +8,17 @@ import { FaRegComment } from "react-icons/fa";
 import { RiSendPlaneLine } from "react-icons/ri"
 import "./CommentModal.css"
 
-const CommentModal = ({onClose, isOpen, isSaved, isPostLiked, handlePostLike, handleSavePost}) => {
+const CommentModal = ({
+  onClose, 
+  isOpen, 
+  isSaved, 
+  isPostLiked, 
+  handlePostLike, 
+  handleSavePost
+}) => {
   return (
     <div>
-          <Modal size={"4xl"} onClose={onClose} isOpen={true} isCentered>
+          <Modal size={"4xl"} onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
         <ModalContent>
 
