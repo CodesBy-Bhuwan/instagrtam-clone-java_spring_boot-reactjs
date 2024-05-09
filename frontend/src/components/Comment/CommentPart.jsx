@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 const CommentPart = () => {
-  const [isCommetnLike, setIsCommentLike] = useState(false);
+  const [isCommentLike, setIsCommentLike] = useState();
+
   const handleLikeComment = () => {
-    setIsCommentLike(!isCommetnLike);
+    setIsCommentLike(!isCommentLike);
   };
   return (
     <div>
@@ -28,7 +29,7 @@ const CommentPart = () => {
             </div>
           </div>
         </div>
-        {isCommetnLike ? (
+        {isCommentLike ? (
           <AiFillHeart
             onClick={handleLikeComment}
             className="text-xs hover:opacity-50 cursor-pointer text-red-700"

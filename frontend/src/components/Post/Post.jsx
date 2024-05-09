@@ -5,10 +5,15 @@ import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { FaRegComment } from "react-icons/fa";
 import { BsBookmarkFill } from "react-icons/bs";
 import '../Post/Post.css'
+import CommentModal from "../Comment/CommentModal";
+import { useDisclosure } from "@chakra-ui/react";
+
+
 const Post = () => {
   const [showDropDown, setshowDropDown] = useState(false);
   const [isPostLiked, setIsPostLiked] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
+  const [isOpen, onOpen, onClose] = useDisclosure();
 
   const handleSavePost = () => {
     setIsSaved(!isSaved);
@@ -19,6 +24,10 @@ const Post = () => {
   const handleClick = () => {
     setshowDropDown(!showDropDown);
   };
+  const handleOpenCommentModal=()=>{
+    onOpen();
+  }
+
 
   return (
     <div>
@@ -71,9 +80,14 @@ const Post = () => {
             )}
             {/* For Like and Unlike post if liked colored red*/}
             {/* When we click comment button new transition has to be occured */}
-            <FaRegComment className="text-xl hover:opacity-50 cursor-pointer" />
+            <FaRegComment 
+            onClick={ handleOpenCommentModal } 
+            className="text-xl hover:opacity-50 cursor-pointer" ></FaRegComment>
+
             {/* we will use charka Ui  */}
-            <RiSendPlaneLine className="text-xl hover:opacity-50 cursor-pointer" />
+            <RiSendPlaneLine 
+            className="text-xl hover:opacity-50 cursor-pointer" />
+
           </div>
           <div className="cursor-pointer">
             {isSaved ? (
@@ -105,6 +119,17 @@ const Post = () => {
             />
           </div>
         </div>
+      </div>
+      <div>
+
+        <CommentModal 
+        handlePostLike={ handlePostLike} 
+        onClose={onClose} 
+        isOpen={isOpen} 
+        handleSavePost={ handleSavePost} 
+        isPostLiked={isPostLiked} 
+        isSaved={isSaved} 
+        />
       </div>
     </div>
   );
