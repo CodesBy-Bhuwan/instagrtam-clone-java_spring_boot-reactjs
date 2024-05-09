@@ -23,7 +23,7 @@ const Sidebar = () => {
           <div className="pt-10">
             <img
               className="w-40"
-              src="https://i.imgur.com/zqpwkLQ.png"
+              src="https://i.imgur.com/zqpwkLQ.png"//logo of instagram
               alt=""
             />
           </div>
