@@ -13,7 +13,7 @@ const Post = () => {
   const [showDropDown, setshowDropDown] = useState(false);
   const [isPostLiked, setIsPostLiked] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
-  const [isOpen, onOpen, onClose] = useDisclosure();
+  const {isOpen, onOpen, onClose} = useDisclosure(false);
 
   const handleSavePost = () => {
     setIsSaved(!isSaved);
@@ -25,7 +25,7 @@ const Post = () => {
     setshowDropDown(!showDropDown);
   };
   const handleOpenCommentModal=()=>{
-    onOpen();
+    onOpen(!isOpen);
   }
 
 
@@ -123,10 +123,10 @@ const Post = () => {
       <div>
 
         <CommentModal 
-        handlePostLike={ handlePostLike} 
+        handlePostLike={handlePostLike} 
         onClose={onClose} 
         isOpen={isOpen} 
-        handleSavePost={ handleSavePost} 
+        handleSavePost={handleSavePost} 
         isPostLiked={isPostLiked} 
         isSaved={isSaved} 
         />
