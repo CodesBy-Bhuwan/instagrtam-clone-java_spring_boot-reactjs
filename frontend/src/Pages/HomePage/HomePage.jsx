@@ -15,9 +15,8 @@ const HomePage = () => {
             {[1,2,3].map((item) => <Post/>)}
             </div>
       </div>
-      <div>
+      <div className='w-[35%]'>
         {/* Otherinfo in the Right hand side */}
-        homeiinfo
         <HomeRight />
       </div>
       </div>
