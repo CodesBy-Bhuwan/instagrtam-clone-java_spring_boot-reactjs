@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { FaPhotoVideo } from "react-icons/fa";
 import { GrEmoji } from "react-icons/gr";
+import { GoLocation } from "react-icons/go";
 import "./CreatePostModal.css";
 
 //   From this location we can post the content
@@ -60,7 +61,7 @@ const CreatePostModal = ({ isOpen, onClose }) => {
 
   return (
     <div>
-      <Modal size={"4xl"} onClose={onClose} isOpen={true} isCentered>
+      <Modal size={"4xl"} onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
         <ModalContent>
           <div className="flex justify-between py-1 px-10 items-center">
@@ -101,7 +102,7 @@ const CreatePostModal = ({ isOpen, onClose }) => {
                 {file && <img className="max-h-full" src={URL.createobjectURL(file)} alt="" />}
 
                 </div>
-                <div className="w-[1px] border-2 h-full">Instagram</div>
+                <div className="w-[1px] border-2 h-full"></div>
                 <div className="w-[50%]">
                     <div></div>
                     <div className="flex items-center px-2">
@@ -125,8 +126,10 @@ const CreatePostModal = ({ isOpen, onClose }) => {
                         <p className="opacity-70">{caption?.length} /2,200</p>
                     </div>
                     <hr />
-                    <div>
+                    <div className="p-2 flex justify-between items-center " >
                         <input className="locationInput" type="text" placeholder="location" name="location"/>
+                        <GoLocation />
+                        <hr />
                     </div>
                 </div>
             </div>
