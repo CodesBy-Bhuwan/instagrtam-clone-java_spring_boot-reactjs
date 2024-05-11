@@ -2,7 +2,6 @@ import React from 'react'
 import StoriesCircle from '../../components/StoriesComponents/StoriesCircle'
 import HomeRight from '../../components/HomeRight/HomeRight'
 import Post from '../../components/Post/Post'
-import CreatePostModal from '../../components/CreatePost/CreatePostModal'
 import { useDisclosure } from "@chakra-ui/react";
 
 const HomePage = () => {
