@@ -3,8 +3,11 @@ import StoriesCircle from '../../components/StoriesComponents/StoriesCircle'
 import HomeRight from '../../components/HomeRight/HomeRight'
 import Post from '../../components/Post/Post'
 import CreatePostModal from '../../components/CreatePost/CreatePostModal'
+import { useDisclosure } from "@chakra-ui/react";
 
 const HomePage = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
   return (
     <div>
       <div className='mt-10 flex w-[100%] justify-center'>
@@ -21,7 +24,7 @@ const HomePage = () => {
         <HomeRight />
       </div>
       </div>
-      <CreatePostModal />
+      
     </div>
   )
 }
