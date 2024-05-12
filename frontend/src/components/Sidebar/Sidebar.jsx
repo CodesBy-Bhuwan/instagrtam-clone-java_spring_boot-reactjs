@@ -18,14 +18,14 @@ const Sidebar = () => {
     if (title === "Profile") {
       navigate("/username");
     } else if (title === "Home") {
-      navigate("/");
+      navigate("/Home");
     } else if (title === "Create"){
       onOpen()
     }
      if (title==="Search"){
-      setIsSearchVisible(true)
+      setIsSearchVisible(true);
     } else{
-      setIsSearchVisible(false)
+      setIsSearchVisible(false);
     }
   };
 
