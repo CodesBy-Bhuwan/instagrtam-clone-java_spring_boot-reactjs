@@ -8,12 +8,12 @@
     transition: opacity .3 ease-out;
     margin: 1rem;
 }
-.progress-bar-container .active{
+.active{
     opacity: 1;
 }
 .progress-bar{
     height: 100%;
-    background-color: blue;
+    background-color: rgb(54, 113, 207);
     border-radius: 4px;
 
 }
