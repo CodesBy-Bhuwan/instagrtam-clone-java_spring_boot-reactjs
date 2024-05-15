@@ -155,4 +155,23 @@ public class User {
     public void setSavedPost(List<Post> savedPost) {
         this.savedPost = savedPost;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", mobile='" + mobile + '\'' +
+                ", website='" + website + '\'' +
+                ", bio='" + bio + '\'' +
+                ", gender='" + gender + '\'' +
+                ", image='" + image + '\'' +
+                ", password='" + password + '\'' +
+                ", follower=" + follower +
+                ", following=" + following +
+                ", stories=" + stories +
+                ", savedPost=" + savedPost +
+                '}';
+    }
 }
