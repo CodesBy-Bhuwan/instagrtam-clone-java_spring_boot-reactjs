@@ -2,7 +2,7 @@ package com.cloneinsta.basic.instagram.clone.modal;
 
 import com.cloneinsta.basic.instagram.clone.dto.UserDto;
 import jakarta.persistence.*;
-import org.hibernate.annotations.Comments;
+import org.hibernate.annotations.Comment;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -32,18 +32,22 @@ public class Post {
     private UserDto user;
 
     @OneToMany
-    private List<Comments> comments = new ArrayList<Comments>();
+    private List<Comment> Comments = new ArrayList<Comment>();
+
+    @Embedded
+    @ElementCollection
+    @JoinTable(name = "likedByUsers",joinColumns = @JoinColumn(name = "user_id"))
     private Set<UserDto> likedByUsers = new HashSet<>();
 
 //    Constructor
-    public Post(Integer id, String caption, String image, String location, LocalTime createdAt, UserDto user, List<Comments> comments, Set<UserDto> likedByUsers) {
+    public Post(Integer id, String caption, String image, String location, LocalTime createdAt, UserDto user, List<Comment> Comment, Set<UserDto> likedByUsers) {
         this.id = id;
         this.caption = caption;
         this.image = image;
         this.location = location;
         this.createdAt = createdAt;
         this.user = user;
-        this.comments = comments;
+        this.Comments = Comment;
         this.likedByUsers = likedByUsers;
     }
 
@@ -96,12 +100,12 @@ public class Post {
         this.user = user;
     }
 
-    public List<Comments> getComments() {
-        return comments;
+    public List<Comment> getComments() {
+        return Comments;
     }
 
-    public void setComments(List<Comments> comments) {
-        this.comments = comments;
+    public void setComments(List<Comment> Comments) {
+        this.Comments = Comments;
     }
 
     public Set<UserDto> getLikedByUsers() {
