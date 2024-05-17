@@ -10,6 +10,10 @@ public class UserDto {
     private String name;
     private String userImage;
 
+    public UserDto(){
+
+    }
+
 //Constructor
     public UserDto(Integer id, String username, String email, String name, String userImage) {
         this.id = id;

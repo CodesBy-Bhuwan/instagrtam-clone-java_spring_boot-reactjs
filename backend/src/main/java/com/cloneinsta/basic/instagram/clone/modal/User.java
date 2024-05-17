@@ -15,7 +15,7 @@ public class User {
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         private Integer id;
-
+        private String name;
         private String username;
         private String email;
         private String mobile;
@@ -36,14 +36,19 @@ public class User {
         @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
         private List<Story> stories = new ArrayList<>();
 
-
         @ManyToMany
         private List<Post> savedPost = new ArrayList<>();
 
+        public User(){
+
+        }
+
+
 //        Constructor
-    public User(Integer id, String username, String email, String mobile, String website, String bio, String gender, String image, String password, Set<UserDto> follower, Set<UserDto> following, List<Story> stories, List<Post> savedPost) {
+    public User(Integer id, String username, String name, String email, String mobile, String website, String bio, String gender, String image, String password, Set<UserDto> follower, Set<UserDto> following, List<Story> stories, List<Post> savedPost) {
         this.id = id;
         this.username = username;
+        this.name = name;
         this.email = email;
         this.mobile = mobile;
         this.website = website;
@@ -79,6 +84,15 @@ public class User {
     public String getEmail() {
         return email;
     }
+
+
+    public String getName() {
+        return name;
+    } //manual
+
+    public void setName(String name) {
+        this.name = name;
+    } //Manual
 
     public void setEmail(String email) {
         this.email = email;
@@ -169,6 +183,7 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
+                ", name='" + name + '\'' + //Manual
                 ", email='" + email + '\'' +
                 ", mobile='" + mobile + '\'' +
                 ", website='" + website + '\'' +
