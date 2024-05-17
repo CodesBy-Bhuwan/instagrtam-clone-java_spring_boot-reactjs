@@ -33,7 +33,6 @@ public class GlobalExceptions {
     }
 
 
-
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorDetails> otherExceptionHandler(Exception ue, WebRequest req){
 
